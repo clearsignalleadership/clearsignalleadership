@@ -816,27 +816,47 @@ document.querySelectorAll(".light-canvas").forEach(c=>initLightCanvas(c));
 </script>
 
 <script>
-document.getElementById('signup-form').addEventListener('submit', async function(e) {
+document.getElementById('signup-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const name = document.getElementById('signup-name').value.trim();
   const email = document.getElementById('signup-email').value.trim();
   if (!email) return;
-  try {
-    const response = await fetch('/.netlify/functions/brevo', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, name, listId: 3 })
-    });
-    if (response.ok || response.status === 204 || response.status === 201) {
-      document.getElementById('signup-form').style.display = 'none';
-      document.getElementById('signup-success').style.display = 'block';
-    } else {
-      document.getElementById('signup-error').style.display = 'block';
-    }
-  } catch(err) {
-    document.getElementById('signup-error').style.display = 'block';
-  }
+
+  // Submit to Brevo via hidden iframe
+  const iframe = document.getElementById('brevo-iframe');
+  const brevoUrl = 'https://9f988641.sibforms.com/serve/MUIFAJavqLh08sEMBSqvwQk0ZSCiCZCNu1VzfIv_1vh_04wjeTiIBQRFKMmCoQLZqg49QQzH7PHhoi0Vyv6sojmX3fXoR7QSjd3QqNRlS_mfnTm90w8E-AXvfJp95HLzKYLd476skBs1O8Tw4NgNwTolvWbw6AXlUwR1CePqmVceSZdwAyslSzQ-6j_h4KIDyvsxwt0ITGauHpenQw==';
+  
+  // Create a temporary form that posts to Brevo
+  const tempForm = document.createElement('form');
+  tempForm.method = 'POST';
+  tempForm.action = brevoUrl;
+  tempForm.target = 'brevo-iframe';
+  tempForm.style.display = 'none';
+
+  const emailInput = document.createElement('input');
+  emailInput.name = 'EMAIL';
+  emailInput.value = email;
+  tempForm.appendChild(emailInput);
+
+  const nameInput = document.createElement('input');
+  nameInput.name = 'FIRSTNAME';
+  nameInput.value = name.split(' ')[0];
+  tempForm.appendChild(nameInput);
+
+  const lastnameInput = document.createElement('input');
+  lastnameInput.name = 'LASTNAME';
+  lastnameInput.value = name.split(' ').slice(1).join(' ');
+  tempForm.appendChild(lastnameInput);
+
+  document.body.appendChild(tempForm);
+  tempForm.submit();
+  document.body.removeChild(tempForm);
+
+  // Show success immediately
+  document.getElementById('signup-form').style.display = 'none';
+  document.getElementById('signup-success').style.display = 'block';
 });
 </script>
+<iframe name="brevo-iframe" id="brevo-iframe" style="display:none;"></iframe>
 </body>
 </html>
