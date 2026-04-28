@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Marta — Clear Signal Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: #0d1f35;
+  color: #f0ece0;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.4rem 4rem;
+  background: rgba(13,31,53,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(240,236,224,0.06);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #f0ece0; text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(240,236,224,0.42); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: #ddd4b8; }
+
+/* HERO */
+.page-hero {
+  padding: 10rem 4rem 5rem;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.page-eyebrow {
+  font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(240,236,224,0.38); display: block; margin-bottom: 1.5rem;
+}
+.page-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.8rem);
+  font-weight: 300; line-height: 1.1;
+  color: #f0ece0; margin-bottom: 1.2rem;
+}
+.page-headline em { font-style: italic; color: #a8c0d8; }
+.page-sub {
+  font-size: 0.93rem; line-height: 1.85;
+  color: rgba(240,236,224,0.48);
+  max-width: 480px; margin: 0 auto;
+}
+
+/* FORM CONTAINER */
+.form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 4rem 8rem;
+}
+
+/* DIVIDER */
+.form-divider {
+  border: none;
+  border-top: 1px solid rgba(240,236,224,0.08);
+  margin: 3rem 0;
+}
+
+/* SECTION LABEL */
+.form-section-label {
+  font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(240,236,224,0.28); display: block; margin-bottom: 2rem;
+}
+
+/* FIELD GROUPS */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+.field-group label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #a8c0d8;
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
+}
+.field-group .field-hint {
+  font-size: 0.78rem;
+  color: rgba(240,236,224,0.3);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: rgba(240,236,224,0.04);
+  border: 1px solid rgba(240,236,224,0.12);
+  color: #f0ece0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  width: 100%;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: rgba(168,192,216,0.45);
+  background: rgba(240,236,224,0.06);
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: rgba(240,236,224,0.2);
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+/* REFERRAL SECTION */
+.referral-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.referral-option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+.referral-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(240,236,224,0.25);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.referral-option input[type="radio"]:checked {
+  border-color: #a8c0d8;
+}
+.referral-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #a8c0d8;
+}
+.referral-option span {
+  font-size: 0.88rem;
+  color: rgba(240,236,224,0.6);
+  letter-spacing: 0.02em;
+}
+
+/* REFERRAL NAME INPUT — appears when Personal referral selected */
+.referral-name-wrap {
+  margin-top: 0.8rem;
+  margin-left: 1.6rem;
+  display: none;
+}
+.referral-name-wrap.visible {
+  display: block;
+}
+.referral-name-wrap input {
+  max-width: 320px;
+}
+
+/* SUBMIT */
+.form-submit-wrap {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.btn-submit {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.9rem 2.5rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; cursor: pointer;
+  color: #f0ece0;
+  border: 1.5px solid rgba(240,236,224,0.3);
+  background: transparent;
+  transition: background 0.25s, border-color 0.25s;
+}
+.btn-submit:hover {
+  background: rgba(240,236,224,0.07);
+  border-color: rgba(240,236,224,0.55);
+}
+.form-note {
+  font-size: 0.75rem;
+  color: rgba(240,236,224,0.25);
+  letter-spacing: 0.04em;
+}
+
+/* SUCCESS STATE */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 0 2rem;
+  min-height: calc(100vh - 80px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-success.visible { display: flex; }
+.form-success h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: #f0ece0; margin-bottom: 0; line-height: 1.2;
+}
+.form-success h2 em { font-style: italic; color: #a8c0d8; }
+.form-success p {
+  font-size: 0.93rem; line-height: 1.85;
+  color: rgba(240,236,224,0.5);
+}
+
+/* ERROR */
+.field-error {
+  font-size: 0.72rem;
+  color: rgba(220,160,140,0.8);
+  margin-top: 0.4rem;
+  display: none;
+}
+.field-error.visible { display: block; }
+input.error, textarea.error {
+  border-color: rgba(220,160,140,0.4);
+}
+
+/* FOOTER */
+footer {
+  background: #0a1828;
+  color: rgba(240,236,224,0.25);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(240,236,224,0.04);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(240,236,224,0.45); text-decoration: none;
+}
+footer a { color: rgba(240,236,224,0.25); text-decoration: none; }
+footer a:hover { color: #a8c0d8; }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .page-hero { padding: 8rem 1.5rem 3rem; }
+  .form-wrap { padding: 0 1.5rem 5rem; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Clear Signal Leadership</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#work">The Work</a></li>
+    <li><a href="contact.html">Work With Me</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <span class="page-eyebrow">Get in touch</span>
+  <h1 class="page-headline">Your next jump<br><em>starts here.</em></h1>
+  <p class="page-sub">I read every message personally. The questions below help me understand where you are &#8212; most are optional.</p>
+  <p class="page-sub" style="margin-top:1rem;color:rgba(240,236,224,0.35);">You&#39;ll also be the first to hear about upcoming programs.</p>
+</div>
+
+<div class="form-wrap">
+
+  <form id="contact-form" action="https://formspree.io/f/mgorpjoq" method="POST" novalidate>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="name" style="font-style:normal;">Name</label><span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span>
+        <input type="text" id="name" name="name" placeholder="First and last name" required>
+        <span class="field-error" id="name-error">Please enter your name</span>
+      </div>
+      <div class="field-group">
+        <label for="email" style="font-style:normal;">Email</label><span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span>
+        <input type="email" id="email" name="email" placeholder="hello@you.com" required>
+        <span class="field-error" id="email-error">Please enter a valid email</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="about">Your message</label>
+      <span class="field-hint">Enquiring about a training, retreat, or something else? Tell me here.</span>
+      <textarea id="about" name="about" placeholder=""></textarea>
+    </div>
+
+    <hr class="form-divider">
+    <span class="form-section-label">Before we speak</span>
+    <p style="font-size:0.88rem;line-height:1.85;color:rgba(240,236,224,0.42);margin-bottom:2rem;">Most questions are optional — but the more you share, the better I can show up for you.</p>
+
+    <div class="field-group">
+      <label for="q1">What are you stepping into, creating, or dreaming into being right now — and what's making it hard?</label><span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span>
+      <textarea id="q1" name="q1" placeholder="Take your time with this one..." required></textarea>
+      <span class="field-error" id="q1-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q2">What's the gap between where you are and where you want to be? And what's in the way?</label>
+      <textarea id="q2" name="q2" placeholder=""></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="q3">What would it mean to you if that gap closed?</label>
+      <textarea id="q3" name="q3" placeholder=""></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="q4">What are you most afraid to admit about where you are right now?</label>
+      <textarea id="q4" name="q4" placeholder=""></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="q5">What made you reach out now?</label>
+      <textarea id="q5" name="q5" placeholder=""></textarea>
+    </div>
+
+    <hr class="form-divider">
+    <span class="form-section-label">How did you hear about me? <span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span></span>
+
+    <div class="referral-options">
+      <label class="referral-option">
+        <input type="radio" name="source" value="referral">
+        <span>Personal referral</span>
+      </label>
+      <div class="referral-name-wrap" id="referral-name-wrap">
+        <input type="text" id="referral-name" name="referral_name" placeholder="Who referred you?">
+      </div>
+      <label class="referral-option">
+        <input type="radio" name="source" value="event">
+        <span>Event with Marta</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="linkedin">
+        <span>LinkedIn</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="social">
+        <span>Social media</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="other">
+        <span>Other</span>
+      </label>
+    </div>
+
+    <span class="field-error" id="source-error" style="margin-top:0.5rem;">Please let me know how you found me</span>
+
+    <div class="form-submit-wrap">
+      <button type="submit" class="btn-submit">Send my answers →</button>
+
+    </div>
+
+  </form>
+
+  <div class="form-success" id="form-success">
+    <h2>Thank you.<br><em>I'll be in touch.</em></h2>
+    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(240,236,224,0.4);letter-spacing:0.03em;">I read every message personally and will be in touch soon.</p>
+  </div>
+
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Clear Signal Leadership</a>
+  <span>© 2026 Clear Signal Leadership · All rights reserved</span>
+  <a href="mailto:hello@clearsignalleadership.com">hello@clearsignalleadership.com</a>
+</footer>
+
+<script>
+// Show referral name field when Personal referral is selected
+document.querySelectorAll('input[name="source"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    const wrap = document.getElementById('referral-name-wrap');
+    if (this.value === 'referral') {
+      wrap.classList.add('visible');
+    } else {
+      wrap.classList.remove('visible');
+      document.getElementById('referral-name').value = '';
+    }
+  });
+});
+
+// Form validation and submission
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  // Validate name
+  const name = document.getElementById('name');
+  const nameError = document.getElementById('name-error');
+  if (!name.value.trim()) {
+    name.classList.add('error');
+    nameError.classList.add('visible');
+    valid = false;
+  } else {
+    name.classList.remove('error');
+    nameError.classList.remove('visible');
+  }
+
+  // Validate email
+  const email = document.getElementById('email');
+  const emailError = document.getElementById('email-error');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value.trim())) {
+    email.classList.add('error');
+    emailError.classList.add('visible');
+    valid = false;
+  } else {
+    email.classList.remove('error');
+    emailError.classList.remove('visible');
+  }
+
+  // Validate q1
+  const q1 = document.getElementById('q1');
+  const q1Error = document.getElementById('q1-error');
+  if (!q1.value.trim()) {
+    q1.classList.add('error');
+    q1Error.classList.add('visible');
+    valid = false;
+  } else {
+    q1.classList.remove('error');
+    q1Error.classList.remove('visible');
+  }
+
+  // Validate source
+  const sourceRadioCheck = document.querySelector('input[name="source"]:checked');
+  const sourceError = document.getElementById('source-error');
+  if (!sourceRadioCheck) {
+    sourceError.classList.add('visible');
+    valid = false;
+  } else {
+    sourceError.classList.remove('visible');
+  }
+
+  if (!valid) return;
+
+  // Get form values
+  const nameVal = document.getElementById('name').value.trim();
+  const emailVal = document.getElementById('email').value.trim();
+
+  // Submit to Formspree (sends full answers to your inbox)
+  const formData = new FormData(this);
+
+  try {
+    const [formspreeResponse] = await Promise.all([
+      fetch('https://formspree.io/f/mgorpjoq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }),
+      // Add to Brevo Contact form list 6 (triggers auto-reply automation)
+      fetch('/.netlify/functions/brevo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, name: nameVal, listId: 6 })
+      })
+    ]);
+
+    if (formspreeResponse.ok) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.querySelector('.page-hero').style.display = 'none';
+      document.querySelector('.form-wrap').style.paddingTop = '8rem';
+      document.getElementById('form-success').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+    }
+  } catch (error) {
+    alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+  }
+});
+</script>
+</body>
+</html>
