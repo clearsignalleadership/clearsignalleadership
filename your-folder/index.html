@@ -733,20 +733,7 @@ footer a:hover { color: #a8c0d8; }
   </div>
 </section>
 
-<!-- SIGNUP SECTION -->
-<section style="background:#0d1f35;padding:5rem 4rem;text-align:center;border-top:1px solid rgba(240,236,224,0.06);">
-  <span style="font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(240,236,224,0.38);display:block;margin-bottom:1.2rem;">Stay in the loop</span>
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:300;color:#f0ece0;line-height:1.2;margin-bottom:0.8rem;">Be the first to hear about<br><em style="font-style:italic;color:#a8c0d8;">upcoming programs.</em></h2>
-  <p style="font-size:0.88rem;color:rgba(240,236,224,0.42);margin-bottom:2.5rem;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.8;">Webinars, training programs, retreats. No noise — only things worth your attention.</p>
-  <form id="signup-form" style="display:flex;gap:0;max-width:480px;margin:0 auto 1rem;" novalidate>
-    <input type="text" id="signup-name" name="name" placeholder="Your name" style="flex:1;background:rgba(240,236,224,0.06);border:1px solid rgba(240,236,224,0.15);border-right:none;color:#f0ece0;font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;padding:0.85rem 1.2rem;outline:none;">
-    <input type="email" id="signup-email" name="email" placeholder="Your email" style="flex:2;background:rgba(240,236,224,0.06);border:1px solid rgba(240,236,224,0.15);border-right:none;color:#f0ece0;font-family:'Jost',sans-serif;font-weight:300;font-size:0.88rem;padding:0.85rem 1.2rem;outline:none;">
-    <button type="submit" style="background:transparent;border:1px solid rgba(240,236,224,0.25);color:#f0ece0;font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.85rem 1.5rem;cursor:pointer;white-space:nowrap;transition:background 0.25s;">Join &#8594;</button>
-  </form>
-  <p id="signup-success" style="display:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#a8c0d8;margin-top:1rem;">Check your inbox &#8212; one more step to confirm.</p>
-  <p id="signup-error" style="display:none;font-size:0.78rem;color:rgba(220,160,140,0.8);margin-top:0.8rem;">Something went wrong. Please try again.</p>
-  <p style="font-size:0.72rem;color:rgba(240,236,224,0.2);margin-top:1rem;letter-spacing:0.03em;">You&#39;ll receive a confirmation email. No spam, ever.</p>
-</section>
+
 
 <footer>
   <a href="#" class="footer-logo">Clear Signal Leadership</a>
@@ -815,48 +802,6 @@ document.querySelectorAll(".dark-canvas").forEach(c=>initDarkCanvas(c));
 document.querySelectorAll(".light-canvas").forEach(c=>initLightCanvas(c));
 </script>
 
-<script>
-document.getElementById('signup-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('signup-name').value.trim();
-  const email = document.getElementById('signup-email').value.trim();
-  if (!email) return;
 
-  // Submit to Brevo via hidden iframe
-  const iframe = document.getElementById('brevo-iframe');
-  const brevoUrl = 'https://9f988641.sibforms.com/serve/MUIFAJavqLh08sEMBSqvwQk0ZSCiCZCNu1VzfIv_1vh_04wjeTiIBQRFKMmCoQLZqg49QQzH7PHhoi0Vyv6sojmX3fXoR7QSjd3QqNRlS_mfnTm90w8E-AXvfJp95HLzKYLd476skBs1O8Tw4NgNwTolvWbw6AXlUwR1CePqmVceSZdwAyslSzQ-6j_h4KIDyvsxwt0ITGauHpenQw==';
-  
-  // Create a temporary form that posts to Brevo
-  const tempForm = document.createElement('form');
-  tempForm.method = 'POST';
-  tempForm.action = brevoUrl;
-  tempForm.target = 'brevo-iframe';
-  tempForm.style.display = 'none';
-
-  const emailInput = document.createElement('input');
-  emailInput.name = 'EMAIL';
-  emailInput.value = email;
-  tempForm.appendChild(emailInput);
-
-  const nameInput = document.createElement('input');
-  nameInput.name = 'FIRSTNAME';
-  nameInput.value = name.split(' ')[0];
-  tempForm.appendChild(nameInput);
-
-  const lastnameInput = document.createElement('input');
-  lastnameInput.name = 'LASTNAME';
-  lastnameInput.value = name.split(' ').slice(1).join(' ');
-  tempForm.appendChild(lastnameInput);
-
-  document.body.appendChild(tempForm);
-  tempForm.submit();
-  document.body.removeChild(tempForm);
-
-  // Show success immediately
-  document.getElementById('signup-form').style.display = 'none';
-  document.getElementById('signup-success').style.display = 'block';
-});
-</script>
-<iframe name="brevo-iframe" id="brevo-iframe" style="display:none;"></iframe>
 </body>
 </html>
