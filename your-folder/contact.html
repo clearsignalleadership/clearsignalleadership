@@ -158,7 +158,19 @@ textarea {
   gap: 0.9rem;
   cursor: pointer;
 }
-.referral-option input[type="radio"] {
+input[type="checkbox"]:checked {
+  border-color: #a8c0d8;
+}
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #a8c0d8;
+}
+
   appearance: none;
   -webkit-appearance: none;
   width: 16px;
@@ -289,7 +301,7 @@ footer a:hover { color: #a8c0d8; }
 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+  .nav-links { display: flex; }
   .page-hero { padding: 8rem 1.5rem 3rem; }
   .form-wrap { padding: 0 1.5rem 5rem; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
@@ -302,9 +314,8 @@ footer a:hover { color: #a8c0d8; }
 <nav>
   <a href="index.html" class="nav-logo">Clear Signal Leadership</a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#work">The Work</a></li>
-    <li><a href="contact.html">Work With Me</a></li>
   </ul>
 </nav>
 
@@ -366,6 +377,40 @@ footer a:hover { color: #a8c0d8; }
     <div class="field-group">
       <label for="q5">What made you reach out now?</label>
       <textarea id="q5" name="q5" placeholder=""></textarea>
+    </div>
+
+    <hr class="form-divider">
+    <span class="form-section-label">What are you curious about? <span style="color:rgba(240,236,224,0.28);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;margin-left:0.4rem;font-family:'Jost',sans-serif;font-weight:300;">Select all that apply</span></span>
+
+    <div style="display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem;">
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="1:1 Coaching" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);">1:1 Coaching</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Centering in Chaos training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Centering in Chaos</em> training</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Beyond Your Pattern training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Beyond Your Pattern</em> training</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Sustainable Building training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Sustainable Building</em> training</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Redesign Your Life group coaching for women" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Redesign Your Life</em> women's group coaching</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Bali Immersive Retreat" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Bali Immersive</em> retreat</span>
+      </label>
+      <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
+        <input type="checkbox" name="interest" value="Other" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);">Other</span>
+      </label>
     </div>
 
     <hr class="form-divider">
