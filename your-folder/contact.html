@@ -160,13 +160,14 @@ textarea {
 }
 input[type="checkbox"]:checked {
   border-color: #a8c0d8;
+  background: rgba(168,192,216,0.15);
 }
 input[type="checkbox"]:checked::after {
   content: '';
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 6px; height: 6px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: #a8c0d8;
 }
@@ -380,41 +381,41 @@ footer a:hover { color: #a8c0d8; }
     </div>
 
     <hr class="form-divider">
-    <span class="form-section-label">What are you curious about? <span style="color:rgba(240,236,224,0.28);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;margin-left:0.4rem;font-family:'Jost',sans-serif;font-weight:300;">Select all that apply</span></span>
+    <span class="form-section-label">What are you curious about? <span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;font-style:normal;">Required</span> <span style="color:rgba(240,236,224,0.28);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;margin-left:0.4rem;font-family:'Jost',sans-serif;font-weight:300;">Select all that apply</span></span>
 
     <div style="display:flex;flex-direction:column;gap:0.9rem;margin-bottom:2rem;">
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="1:1 Coaching" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="1:1 Coaching" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);">1:1 Coaching</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Centering in Chaos training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Centering in Chaos training" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Centering in Chaos</em> training</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Beyond Your Pattern training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Beyond Your Pattern training" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Beyond Your Pattern</em> training</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Sustainable Building training" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Sustainable Building training" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Sustainable Building</em> training</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Redesign Your Life group coaching for women" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Redesign Your Life group coaching for women" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Redesign Your Life</em> women's group coaching</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Bali Immersive Retreat" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Bali Immersive Retreat" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);"><em>Bali Immersive</em> retreat</span>
       </label>
       <label style="display:flex;align-items:center;gap:0.9rem;cursor:pointer;">
-        <input type="checkbox" name="interest" value="Other" style="appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
+        <input type="checkbox" name="interest" value="Other" style="appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;border:1px solid rgba(240,236,224,0.25);border-radius:50%;flex-shrink:0;position:relative;cursor:pointer;transition:border-color 0.2s;background:transparent;">
         <span style="font-size:0.88rem;color:rgba(240,236,224,0.6);">Other</span>
       </label>
     </div>
+    <span class="field-error" id="interest-error" style="margin-bottom:1rem;">Please select at least one option</span>
 
-    <hr class="form-divider">
-    <span class="form-section-label">How did you hear about me? <span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span></span>
+    <hr class="form-divider"> <span style="color:rgba(220,160,140,0.8);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;margin-left:0.6rem;font-family:'Jost',sans-serif;font-weight:300;">Required</span></span>
 
     <div class="referral-options">
       <label class="referral-option">
@@ -518,6 +519,16 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   } else {
     q1.classList.remove('error');
     q1Error.classList.remove('visible');
+  }
+
+  // Validate interests
+  const interestChecked = document.querySelector('input[name="interest"]:checked');
+  const interestError = document.getElementById('interest-error');
+  if (!interestChecked) {
+    interestError.classList.add('visible');
+    valid = false;
+  } else {
+    interestError.classList.remove('visible');
   }
 
   // Validate source
