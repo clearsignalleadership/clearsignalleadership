@@ -481,13 +481,15 @@ footer a:hover { color: #a8c0d8; }
   </ul>
 </nav>
 
-
 <!-- HERO -->
 <section class="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-fade"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow" style="font-size:0.72rem;margin-top:4rem;margin-bottom:2.8rem;">Marta Milkowska<br>Executive Leadership Coach &amp; Facilitator</span>
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:0.4rem;margin-top:4rem;margin-bottom:2.8rem;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,236,224,0.75);">Marta Milkowska</span>
+      <span style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(240,236,224,0.38);">Executive Leadership Coach &amp; Facilitator</span>
+    </div>
     <h1 class="hero-headline">The next thing you&#39;re here to create</h1>
     <span class="hero-headline-italic">is already inside of you.</span>
     <span class="hero-sub">You&#39;ve made impossible jumps. Built unthinkable things.<br>The next chapter is a return - to clarity, inner authority, your wildest dream.<br>Beyond the patterns that hold you back. Into the whole range of who you are.</span>
@@ -499,7 +501,7 @@ footer a:hover { color: #a8c0d8; }
 </section>
 
 <!-- GUIDE REVEAL — light bg, sticky photo -->
-<section class="guide-section" id="about">
+<section class="guide-section" >
   <div class="guide-inner">
     <div class="guide-content-col">
       <div style="border-left:1px solid rgba(74,112,144,0.3);padding-left:2.5rem;margin-bottom:3rem;">
@@ -692,33 +694,29 @@ footer a:hover { color: #a8c0d8; }
   </div>
 </section>
 
-<section class="testimonials">
-  <canvas class="section-canvas dark-canvas"></canvas>
-  <div style="max-width:1100px;margin:0 auto 3rem;position:relative;z-index:1;">
-    <span class="eyebrow-dk">Voices</span>
-  </div>
-  <div class="testimonial-hero">
-    <p>&#8220;Our work was exactly what I needed to start a new chapter in my life.&#8221;</p>
-      <span class="attr">Female Founder &amp; CEO - CA, USA</span>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonial-hero">
+    <p style="font-size:clamp(1.1rem,1.8vw,1.8rem);">&ldquo;Our work was exactly what I needed to start a new chapter in my life. <br> What I appreciated most is that it was not just about becoming a better founder or making better decisions. It was about who I was becoming through the experience.<br><br>Marta created a space where I could slow down, be honest about my fears, and look at the patterns driving me. She asks thoughtful, direct questions and offers reflections that help you see things you may not have been able to see on your own.&rdquo;</p>
+    <span class="attr">— Female Founder &amp; CEO, CA, USA</span>
   </div>
   <div class="testimonials-grid">
     <div class="testimonial">
-      <p>&#8220;In a world that rewards aggression over authenticity, you are a beacon of light and clarity.&#8221;</p>
-      <span class="attr">C-Level Executive, Health AI Startup - CA, USA</span>
+      <p>&ldquo;In a world that rewards aggression over authenticity, you is a beacon of light and clarity.&rdquo;</p>
+      <span class="attr">C-Level Executive, Health AI Startup — CA, USA</span>
     </div>
     <div class="testimonial">
-      <p>&#8220;After just 12 minutes of speaking with you, I knew exactly what to do. You get straight to the core of the issue and create clarity almost instantly.&#8221;</p>
-      <span class="attr">Owner &amp; CEO - Poland</span>
+      <p>&ldquo; You helped me enter a new chapter with more self-trust, clarity, and energy. I left our conversations feeling more connected to myself, with new ideas coming up naturally because I finally had enough space to hear myself think.&rdquo;</p>
+      <span class="attr">Female Founder &amp; CEO — CA, USA</span>
     </div>
     <div class="testimonial">
-      <p>&#8220;I understood that regulation is a non-negotiable, like food or sleep. My head is turning with all the ideas popping up.&#8221;</p>
-    <span class="attr">Founder &amp; Solo Mom - CA, USA</span>
+      <p>&ldquo;After just 12 minutes of speaking with you, I knew exactly what to do. You get straight to the core of the issue and create clarity almost instantly.&rdquo;</p>
+      <span class="attr">Owner &amp; CEO — Poland</span>
     </div>
   </div>
 </section>
-
-<div style="padding:4rem 2.5rem;text-align:center;background:#f2ede3;margin:0;display:flex;align-items:center;justify-content:center;gap:3rem;">
+```<div style="padding:4rem 2.5rem;text-align:center;background:#f2ede3;margin:0;display:flex;align-items:center;justify-content:center;gap:3rem;">
   <svg width="40" height="80" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:0.25;">
     <path d="M20 4 C20 4 8 20 8 40 C8 60 20 76 20 76" stroke="#1a1714" stroke-width="0.8" fill="none" stroke-linecap="round"/>
     <path d="M28 12 C28 12 16 24 16 40 C16 56 28 68 28 68" stroke="#1a1714" stroke-width="0.5" fill="none" stroke-linecap="round" opacity="0.5"/>
