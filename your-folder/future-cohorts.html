@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Cohorts — Back to Self | Clear Signal Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: #faf7f2;
+  color: #1c2b3a;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.4rem 4rem;
+  background: rgba(13,31,53,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(240,236,224,0.06);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #f0ece0; text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(240,236,224,0.42); text-decoration: none; transition: color 0.25s;
+}
+.nav-links a:hover { color: #ddd4b8; }
+
+/* PAGE HEADER — no image, lighter-weight than the main application */
+.page-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 9.5rem 2rem 3rem;
+}
+.page-eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #b9812f; display: block; margin-bottom: 1.3rem; font-weight: 500;
+}
+.page-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  font-weight: 300; line-height: 1.12;
+  color: #1c2b3a; margin-bottom: 1.3rem;
+}
+.page-sub {
+  font-size: 0.95rem; line-height: 1.9;
+  color: rgba(28,43,58,0.62);
+  max-width: 560px;
+}
+
+/* FORM CONTAINER */
+.form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 2rem 8rem;
+}
+
+/* DIVIDER */
+.form-divider {
+  border: none;
+  border-top: 1px solid rgba(28,43,58,0.1);
+  margin: 3rem 0;
+}
+
+/* SECTION LABEL */
+.form-section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1c2b3a;
+  display: block;
+  margin-bottom: 1.1rem;
+  line-height: 1.4;
+}
+.field-hint {
+  font-size: 0.8rem;
+  color: rgba(28,43,58,0.42);
+  margin: -0.6rem 0 1.1rem;
+  display: block;
+}
+
+/* REQUIRED / OPTIONAL TAGS */
+.req-tag {
+  color: #b9573f; font-size: 0.55rem; letter-spacing: 0.3em;
+  text-transform: uppercase; margin-left: 0.6rem; font-family: 'Jost', sans-serif;
+  font-weight: 300; font-style: normal;
+}
+.opt-tag {
+  color: rgba(28,43,58,0.32); font-size: 0.55rem; letter-spacing: 0.3em;
+  text-transform: uppercase; margin-left: 0.6rem; font-family: 'Jost', sans-serif;
+  font-weight: 300; font-style: normal;
+}
+
+/* FIELD GROUPS */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+.field-group label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1c2b3a;
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
+}
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: #fff;
+  border: 1px solid rgba(28,43,58,0.15);
+  color: #1c2b3a;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  width: 100%;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #c8933f;
+  background: #fff;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: rgba(28,43,58,0.28);
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+/* CHECKBOX GROUPS (timezones, availability) */
+.checkbox-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+.checkbox-option input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  border: 1px solid rgba(28,43,58,0.25);
+  border-radius: 4px;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.checkbox-option input[type="checkbox"]:checked {
+  background: #c8933f;
+  border-color: #c8933f;
+}
+.checkbox-option input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 4px; height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox-option span {
+  font-size: 0.9rem;
+  color: rgba(28,43,58,0.7);
+  letter-spacing: 0.02em;
+}
+
+/* OTHER TIMEZONE INPUT - appears when Other is checked */
+.other-tz-wrap {
+  margin-top: 0.2rem;
+  margin-left: 1.7rem;
+  display: none;
+}
+.other-tz-wrap.visible { display: block; }
+.other-tz-wrap input { max-width: 320px; }
+
+/* SUBMIT */
+.form-submit-wrap {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.btn-submit {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background: #c8933f;
+  box-shadow: 0 6px 18px rgba(200,147,63,0.28);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(200,147,63,0.36);
+}
+.form-note {
+  font-size: 0.75rem;
+  color: rgba(28,43,58,0.4);
+  letter-spacing: 0.04em;
+}
+
+/* SUCCESS STATE */
+.form-success {
+  display: none;
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 9.5rem 2rem 8rem;
+  flex-direction: column;
+}
+.form-success.visible { display: flex; }
+.form-success h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: #1c2b3a; margin-bottom: 0; line-height: 1.2;
+}
+.form-success h2 em { font-style: italic; color: #b9812f; }
+.form-success p {
+  font-size: 0.93rem; line-height: 1.85;
+  color: rgba(28,43,58,0.55);
+  max-width: 460px;
+  margin-top: 1.5rem;
+}
+
+/* ERROR */
+.field-error {
+  font-size: 0.72rem;
+  color: #b9573f;
+  margin-top: 0.4rem;
+  display: none;
+}
+.field-error.visible { display: block; }
+input.error, textarea.error { border-color: #b9573f; }
+
+/* FOOTER */
+footer {
+  background: #0a1828;
+  color: rgba(240,236,224,0.25);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(240,236,224,0.04);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(240,236,224,0.45); text-decoration: none;
+}
+footer a { color: rgba(240,236,224,0.25); text-decoration: none; }
+footer a:hover { color: #e0b876; }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .page-header { padding: 7.5rem 1.5rem 2.5rem; }
+  .form-wrap { padding: 1rem 1.5rem 5rem; }
+  .form-success { padding: 7.5rem 1.5rem 5rem; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="back-to-self.html" class="nav-logo">Clear Signal Leadership</a>
+  <ul class="nav-links">
+    <li><a href="back-to-self.html">Home</a></li>
+    <li><a href="apply-back-to-self.html">Apply</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <span class="page-eyebrow">Back to Self &middot; Future Cohorts</span>
+  <h1 class="page-headline">A time that works for you.</h1>
+  <p class="page-sub">The October cohort runs on a set schedule. If it doesn't line up with your week, I'd still love to know you're interested &mdash; so I can shape the next cohort around when it actually works for you.</p>
+</div>
+
+<div class="form-wrap">
+
+  <form id="future-form" action="https://formspree.io/f/mgorpjoq" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Back to Self — Future Cohort Interest">
+    <input type="hidden" name="program" value="Back to Self — Future Cohort Interest List">
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="name">Name<span class="req-tag">Required</span></label>
+        <input type="text" id="name" name="name" placeholder="First and last name" required>
+        <span class="field-error" id="name-error">Please enter your name</span>
+      </div>
+      <div class="field-group">
+        <label for="email">Email<span class="req-tag">Required</span></label>
+        <input type="email" id="email" name="email" placeholder="hello@you.com" required>
+        <span class="field-error" id="email-error">Please enter a valid email</span>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <span class="form-section-label">Which timezones work best for you?<span class="req-tag">Required</span></span>
+    <span class="field-hint">Select all that apply.</span>
+    <div class="checkbox-options">
+      <label class="checkbox-option">
+        <input type="checkbox" name="timezone" value="PT (San Francisco)">
+        <span>PT (San Francisco)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="timezone" value="ET (New York)">
+        <span>ET (New York)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="timezone" value="Europe (Paris)">
+        <span>Europe (Paris)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" id="tz-other" name="timezone" value="Other">
+        <span>Other</span>
+      </label>
+    </div>
+    <div class="other-tz-wrap" id="other-tz-wrap">
+      <input type="text" id="other-tz-text" name="timezone_other" placeholder="Which timezone?">
+    </div>
+    <span class="field-error" id="timezone-error">Please select at least one timezone</span>
+
+    <hr class="form-divider">
+
+    <span class="form-section-label">What times are you available?<span class="opt-tag">Optional</span></span>
+    <span class="field-hint">Select all that apply.</span>
+    <div class="checkbox-options">
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekdays, evenings 6–9pm">
+        <span>Weekdays, evenings (6&ndash;9pm)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekdays, late evenings 8–11pm">
+        <span>Weekdays, late evenings (8&ndash;11pm)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekdays, during the day">
+        <span>Weekdays, during the day</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekends, mornings">
+        <span>Weekends, mornings</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekends, during the day">
+        <span>Weekends, during the day</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekends, evenings 6–9pm">
+        <span>Weekends, evenings (6&ndash;9pm)</span>
+      </label>
+      <label class="checkbox-option">
+        <input type="checkbox" name="availability" value="Weekends, late evenings 8–11pm">
+        <span>Weekends, late evenings (8&ndash;11pm)</span>
+      </label>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="field-group">
+      <label for="q1">Why are you interested in this course right now? What's present for you?<span class="opt-tag">Optional</span></label>
+      <textarea id="q1" name="q1" placeholder="Take your time with this one..."></textarea>
+    </div>
+
+    <div class="form-submit-wrap">
+      <button type="submit" class="btn-submit">Send my answers &#8594;</button>
+      <span class="form-note">I read every response personally.</span>
+    </div>
+
+  </form>
+
+</div>
+
+<div class="form-success" id="form-success">
+  <h2>Thank you.<br><em>I'll be in touch.</em></h2>
+  <p>I'll let you know as soon as a cohort lines up with your timezone and schedule.</p>
+</div>
+
+<footer>
+  <a href="back-to-self.html" class="footer-logo">Clear Signal Leadership</a>
+  <span>&copy; 2026 Clear Signal Leadership &middot; All rights reserved</span>
+</footer>
+
+<script>
+// Show "Other" timezone text field when its checkbox is checked
+document.getElementById('tz-other').addEventListener('change', function() {
+  const wrap = document.getElementById('other-tz-wrap');
+  if (this.checked) {
+    wrap.classList.add('visible');
+  } else {
+    wrap.classList.remove('visible');
+    document.getElementById('other-tz-text').value = '';
+  }
+});
+
+// Form validation and submission
+document.getElementById('future-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  ['name', 'email'].forEach(id => {
+    const field = document.getElementById(id);
+    const error = document.getElementById(id + '-error');
+    let ok = field.value.trim().length > 0;
+    if (id === 'email') {
+      ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+    }
+    if (!ok) {
+      field.classList.add('error');
+      error.classList.add('visible');
+      valid = false;
+    } else {
+      field.classList.remove('error');
+      error.classList.remove('visible');
+    }
+  });
+
+  const tzChecked = document.querySelector('input[name="timezone"]:checked');
+  const tzError = document.getElementById('timezone-error');
+  if (!tzChecked) {
+    tzError.classList.add('visible');
+    valid = false;
+  } else {
+    tzError.classList.remove('visible');
+  }
+
+  if (!valid) return;
+
+  const nameVal = document.getElementById('name').value.trim();
+  const emailVal = document.getElementById('email').value.trim();
+  const formData = new FormData(this);
+
+  try {
+    const [formspreeResponse] = await Promise.all([
+      fetch('https://formspree.io/f/mgorpjoq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }),
+      fetch('/.netlify/functions/brevo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, name: nameVal, listId: 7 })
+      })
+    ]);
+
+    if (formspreeResponse.ok) {
+      document.getElementById('future-form').style.display = 'none';
+      document.querySelector('.page-header').style.display = 'none';
+      document.getElementById('form-success').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+    }
+  } catch (error) {
+    alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+  }
+});
+</script>
+</body>
+</html>
