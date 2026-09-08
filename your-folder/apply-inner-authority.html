@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Inner Authority | Clear Signal Leadership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background: #faf7f2;
+  color: #1c2b3a;
+  min-height: 100vh;
+}
+
+h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 300; }
+a { color: inherit; }
+.eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #b9812f; font-weight: 500; display: block; margin-bottom: 1rem; }
+
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.95rem 2.1rem; border-radius: 999px; font-family: "Jost", sans-serif; font-size: 0.85rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-gold { background: #c8933f; color: #fff; box-shadow: 0 6px 18px rgba(200,147,63,0.28); }
+.btn-gold:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(200,147,63,0.36); }
+
+/* sticky pill nav */
+.pillnav-holder { position: sticky; top: 1rem; z-index: 90; display: flex; justify-content: center; margin: -1.6rem 0 0; padding: 0 1rem; }
+.pillnav { background: #fff; border-radius: 999px; box-shadow: 0 10px 30px rgba(28,43,58,0.14); display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.5rem 0.5rem 1.6rem; flex-wrap: wrap; justify-content: center; }
+.pillnav a.link { font-size: 0.8rem; font-weight: 500; color: #3a4a5c; text-decoration: none; padding: 0.6rem 0.9rem; border-radius: 999px; transition: background 0.2s; white-space: nowrap; }
+.pillnav a.link:hover { background: #f0ece4; }
+.pillnav .btn { padding: 0.7rem 1.4rem; font-size: 0.78rem; }
+
+/* HERO — same as the main Inner Authority page */
+.hero { position: relative; min-height: 82vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden;
+  background-image: linear-gradient(rgba(10,16,24,0.45), rgba(10,16,24,0.72)), url('images/redwoods.jpg');
+  background-size: cover; background-position: center;
+  padding: 8rem 2rem 5rem; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,16,24,0.1) 0%, rgba(10,16,24,0.55) 100%); pointer-events: none; }
+.hero-inner { position: relative; z-index: 2; max-width: 920px; margin: 0 auto; text-align: left; color: #f4ede2; }
+.hero .eyebrow { color: #e0b876; }
+.hero h1 { font-size: clamp(3.2rem, 6.5vw, 5.6rem); line-height: 0.98; margin-bottom: 0.9rem; }
+.hero-sub { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.15rem, 1.7vw, 1.5rem); font-weight: 300; line-height: 1.5; color: #a8c8dc; max-width: 920px; margin-bottom: 2.4rem; }
+@media (min-width: 1060px) { .hero-sub-line { white-space: nowrap; } }
+.hero-ctas { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.application-label {
+  display: block;
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #e0b876;
+}
+
+/* BACK LINK */
+.backlink { position: fixed; top: 1.6rem; left: 1.6rem; z-index: 95; font-size: 0.78rem; color: rgba(244,237,226,0.65); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+.backlink:hover { color: #f4ede2; }
+
+.intro-block {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.2rem 2rem 0;
+}
+.intro-block p {
+  font-size: 0.93rem; line-height: 1.85;
+  color: rgba(28,43,58,0.62);
+  margin-bottom: 1.2rem;
+}
+.intro-block p:last-child { margin-bottom: 0; }
+
+/* FORM CONTAINER */
+.form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2rem 8rem;
+}
+
+/* DIVIDER */
+.form-divider {
+  border: none;
+  border-top: 1px solid rgba(28,43,58,0.1);
+  margin: 3rem 0;
+}
+
+/* SECTION LABEL */
+.form-section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1c2b3a;
+  display: block;
+  margin-bottom: 1.1rem;
+  line-height: 1.4;
+}
+
+/* REQUIRED TAG */
+.req-tag {
+  color: #b9573f; font-size: 0.55rem; letter-spacing: 0.3em;
+  text-transform: uppercase; margin-left: 0.6rem; font-family: 'Jost', sans-serif;
+  font-weight: 300; font-style: normal;
+}
+
+/* FIELD GROUPS */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+.field-group label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #1c2b3a;
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
+}
+.field-group label.plain { font-style: normal; color: #1c2b3a; }
+
+/* INPUTS */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: #fff;
+  border: 1px solid rgba(28,43,58,0.15);
+  color: #1c2b3a;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.2rem;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+  width: 100%;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #c8933f;
+  background: #fff;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: rgba(28,43,58,0.28);
+}
+textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.7;
+}
+
+/* REFERRAL SECTION */
+.referral-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.referral-option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+.referral-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid rgba(28,43,58,0.25);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.referral-option input[type="radio"]:checked { border-color: #c8933f; }
+.referral-option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #c8933f;
+}
+.referral-option span {
+  font-size: 0.88rem;
+  color: rgba(28,43,58,0.68);
+  letter-spacing: 0.02em;
+}
+
+/* REFERRAL NAME INPUT - appears when Personal referral selected */
+.referral-name-wrap {
+  margin-top: 0.8rem;
+  margin-left: 1.6rem;
+  display: none;
+}
+.referral-name-wrap.visible { display: block; }
+.referral-name-wrap input { max-width: 320px; }
+
+/* EXPANSION TRACK OPT-IN */
+.expansion-opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.expansion-opt input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  margin-top: 0.15rem;
+  border: 1px solid rgba(28,43,58,0.25);
+  border-radius: 4px;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.expansion-opt input[type="checkbox"]:checked {
+  background: #c8933f;
+  border-color: #c8933f;
+}
+.expansion-opt input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 4px; height: 9px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.expansion-opt span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: #1c2b3a;
+}
+
+/* SUBMIT */
+.form-submit-wrap {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.btn-submit {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  background: #c8933f;
+  box-shadow: 0 6px 18px rgba(200,147,63,0.28);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(200,147,63,0.36);
+}
+.form-note {
+  font-size: 0.75rem;
+  color: rgba(28,43,58,0.4);
+  letter-spacing: 0.04em;
+}
+
+/* SUCCESS STATE */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 0 2rem;
+  min-height: calc(100vh - 80px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 12rem;
+}
+.form-success.visible { display: flex; }
+.form-success h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: #1c2b3a; margin-bottom: 0; line-height: 1.2;
+}
+.form-success h2 em { font-style: italic; color: #b9812f; }
+.form-success p {
+  font-size: 0.93rem; line-height: 1.85;
+  color: rgba(28,43,58,0.55);
+  max-width: 420px;
+}
+
+/* ERROR */
+.field-error {
+  font-size: 0.72rem;
+  color: #b9573f;
+  margin-top: 0.4rem;
+  display: none;
+}
+.field-error.visible { display: block; }
+input.error, textarea.error { border-color: #b9573f; }
+
+/* FOOTER */
+footer {
+  background: #0a1828;
+  color: rgba(240,236,224,0.25);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(240,236,224,0.04);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(240,236,224,0.45); text-decoration: none;
+}
+footer a { color: rgba(240,236,224,0.25); text-decoration: none; }
+footer a:hover { color: #a8c0d8; }
+
+@media (max-width: 860px) {
+  .pillnav { padding: 0.5rem; gap: 0.2rem; }
+  .pillnav a.link { padding: 0.55rem 0.7rem; font-size: 0.74rem; }
+}
+
+@media (max-width: 768px) {
+  .intro-block { padding: 2.5rem 1.5rem 0; }
+  .form-wrap { padding: 2.5rem 1.5rem 5rem; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<a href="Inner-Authority.html" class="backlink">&#8592; Inner Authority Course</a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Oct 3 &ndash; Nov 8, 2026 Cohort</span>
+    <h1>Inner Authority</h1>
+    <p class="hero-sub">Return to your inner alignment. <br><span class="hero-sub-line">For high performers tired of performing, ready to build from clarity again.</span></p>
+    <span class="application-label">Application</span>
+  </div>
+</section>
+
+<div class="intro-block">
+  <p>For each cohort, I select a small, highly curated group of individuals ready to see what's beneath their performance, and build their next chapter from clarity and inner alignment, not momentum.</p>
+  <p>Tell me what's present for you right now, and why this feels like the right time for this work.</p>
+</div>
+
+
+<div class="form-wrap">
+
+  <form id="apply-form" action="https://formspree.io/f/mgorpjoq" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Inner Authority — October Cohort Application">
+    <input type="hidden" name="program" value="Inner Authority — October Cohort (Oct 4–Nov 8, 2026)">
+
+    <div class="field-row">
+      <div class="field-group">
+        <label for="name" class="plain">Name<span class="req-tag">Required</span></label>
+        <input type="text" id="name" name="name" placeholder="First and last name" required>
+        <span class="field-error" id="name-error">Please enter your name</span>
+      </div>
+      <div class="field-group">
+        <label for="email" class="plain">Email<span class="req-tag">Required</span></label>
+        <input type="email" id="email" name="email" placeholder="hello@you.com" required>
+        <span class="field-error" id="email-error">Please enter a valid email</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="q1a">What are you stepping into, creating, or dreaming into being right now?<span class="req-tag">Required</span></label>
+      <textarea id="q1a" name="q1a" placeholder="Take your time with this one..." required></textarea>
+      <span class="field-error" id="q1a-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q1b">What's making it hard?<span class="req-tag">Required</span></label>
+      <textarea id="q1b" name="q1b" required></textarea>
+      <span class="field-error" id="q1b-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q2">What's the gap between where you are and where you want to be? And what's in the way?<span class="req-tag">Required</span></label>
+      <textarea id="q2" name="q2" required></textarea>
+      <span class="field-error" id="q2-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q3">What would it mean to you if that gap closed?<span class="req-tag">Required</span></label>
+      <textarea id="q3" name="q3" required></textarea>
+      <span class="field-error" id="q3-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q4">What are you most scared will happen if nothing changes?<span class="req-tag">Required</span></label>
+      <textarea id="q4" name="q4" required></textarea>
+      <span class="field-error" id="q4-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q5">What are you most afraid to admit about where you are right now?<span class="req-tag">Required</span></label>
+      <textarea id="q5" name="q5" required></textarea>
+      <span class="field-error" id="q5-error">Please share something here</span>
+    </div>
+
+    <div class="field-group">
+      <label for="q6">What makes you feel ready for this course right now?<span class="req-tag">Required</span></label>
+      <textarea id="q6" name="q6" required></textarea>
+      <span class="field-error" id="q6-error">Please share something here</span>
+    </div>
+
+    <hr class="form-divider">
+
+    <label class="expansion-opt">
+      <input type="checkbox" id="expansion" name="expansion_track" value="Yes">
+      <span>Add the Expansion Track (3 coaching sessions) to my application</span>
+    </label>
+
+    <hr class="form-divider">
+    <span class="form-section-label">How did you hear about this course? <span class="req-tag">Required</span></span>
+
+    <div class="referral-options">
+      <label class="referral-option">
+        <input type="radio" name="source" value="Personal referral" required>
+        <span>Personal referral</span>
+      </label>
+      <div class="referral-name-wrap" id="referral-name-wrap">
+        <input type="text" id="referral-name" name="referral_name" placeholder="Who referred you?">
+      </div>
+      <label class="referral-option">
+        <input type="radio" name="source" value="Event with Marta">
+        <span>Event with Marta</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="LinkedIn">
+        <span>LinkedIn</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="Social media">
+        <span>Social media</span>
+      </label>
+      <label class="referral-option">
+        <input type="radio" name="source" value="Other">
+        <span>Other</span>
+      </label>
+    </div>
+    <span class="field-error" id="source-error">Please let me know how you found me</span>
+
+    <div class="form-submit-wrap">
+      <button type="submit" class="btn-submit">Apply now &#8594;</button>
+      <span class="form-note">I read every application personally.</span>
+    </div>
+
+  </form>
+
+  <div class="form-success" id="form-success">
+    <h2>Thank you.<br><em>I'll be in touch.</em></h2>
+    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">I read every application personally, and will follow up before the cohort starts on October 4.</p>
+  </div>
+
+</div>
+
+<footer>
+  <a href="Inner-Authority.html" class="footer-logo">Clear Signal Leadership</a>
+  <span>&copy; 2026 Clear Signal Leadership &middot; All rights reserved</span>
+</footer>
+
+<script>
+// Show referral name field when Personal referral is selected
+document.querySelectorAll('input[name="source"]').forEach(radio => {
+  radio.addEventListener('change', function() {
+    const wrap = document.getElementById('referral-name-wrap');
+    if (this.value === 'Personal referral') {
+      wrap.classList.add('visible');
+    } else {
+      wrap.classList.remove('visible');
+      document.getElementById('referral-name').value = '';
+    }
+  });
+});
+
+// Form validation and submission
+document.getElementById('apply-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  let valid = true;
+  const textFields = ['name', 'email', 'q1a', 'q1b', 'q2', 'q3', 'q4', 'q5', 'q6'];
+
+  textFields.forEach(id => {
+    const field = document.getElementById(id);
+    const error = document.getElementById(id + '-error');
+    let ok = field.value.trim().length > 0;
+    if (id === 'email') {
+      ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+    }
+    if (!ok) {
+      field.classList.add('error');
+      error.classList.add('visible');
+      valid = false;
+    } else {
+      field.classList.remove('error');
+      error.classList.remove('visible');
+    }
+  });
+
+  const sourceChecked = document.querySelector('input[name="source"]:checked');
+  const sourceError = document.getElementById('source-error');
+  if (!sourceChecked) {
+    sourceError.classList.add('visible');
+    valid = false;
+  } else {
+    sourceError.classList.remove('visible');
+  }
+
+  if (!valid) return;
+
+  const nameVal = document.getElementById('name').value.trim();
+  const emailVal = document.getElementById('email').value.trim();
+  const formData = new FormData(this);
+
+  try {
+    const [formspreeResponse] = await Promise.all([
+      fetch('https://formspree.io/f/mgorpjoq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }),
+      fetch('/.netlify/functions/brevo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailVal, name: nameVal, listId: 7 })
+      })
+    ]);
+
+    if (formspreeResponse.ok) {
+      document.getElementById('apply-form').style.display = 'none';
+      document.getElementById('form-success').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+    }
+  } catch (error) {
+    alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
+  }
+});
+</script>
+</body>
+</html>
