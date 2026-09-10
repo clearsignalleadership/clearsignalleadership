@@ -367,7 +367,7 @@ footer a:hover { color: #a8c0d8; }
   </div>
 </section>
 
-<div class="intro-block">
+<div class="intro-block" id="intro-block">
   <p>For each cohort, I select a small, highly curated group of individuals ready to see what's beneath their performance, and build their next chapter from clarity and inner alignment, not momentum.</p>
   <p>Tell me what's present for you right now, and why this feels like the right time for this work.</p>
 </div>
@@ -487,8 +487,9 @@ footer a:hover { color: #a8c0d8; }
   </form>
 
   <div class="form-success" id="form-success">
-    <h2>Thank you.<br><em>I'll be in touch.</em></h2>
-    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">I read every application personally, and will follow up before the cohort starts on October 18.</p>
+    <h2>Thank you for your application.</h2>
+    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">I read every application personally. You'll hear from me soon.</p>
+    <p style="margin-top:0.8rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">In the meantime, trust what brought you here.</p>
   </div>
 
 </div>
@@ -570,12 +571,13 @@ document.getElementById('apply-form').addEventListener('submit', async function(
       fetch('/.netlify/functions/brevo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailVal, name: nameVal, listId: 7 })
+        body: JSON.stringify({ email: emailVal, name: nameVal, listId: 8 })
       })
     ]);
 
     if (formspreeResponse.ok) {
       document.getElementById('apply-form').style.display = 'none';
+      document.getElementById('intro-block').style.display = 'none';
       document.getElementById('form-success').classList.add('visible');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
