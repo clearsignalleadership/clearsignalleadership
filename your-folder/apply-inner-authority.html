@@ -579,7 +579,7 @@ document.getElementById('apply-form').addEventListener('submit', async function(
       document.getElementById('apply-form').style.display = 'none';
       document.getElementById('intro-block').style.display = 'none';
       document.getElementById('form-success').classList.add('visible');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
       alert('Something went wrong. Please email hello@clearsignalleadership.com directly.');
     }
