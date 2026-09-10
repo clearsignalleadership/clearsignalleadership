@@ -43,7 +43,7 @@ nav {
   height: 100vh; min-height: 600px;
   display: flex; flex-direction: column; justify-content: center;
   overflow: hidden; background: #0d1f35;
-  padding-top: 64px;
+  padding-top: 64px; padding-bottom: 3rem;
 }
 .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .hero-fade {
@@ -425,8 +425,9 @@ footer a:hover { color: #a8c0d8; }
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: flex; }
   .nav-links li { display: none; }
-  .nav-links .nav-work-with-me { display: block; }
+  .nav-links .nav-mobile-visible { display: block; }
   .hero-content { padding: 0 1.5rem; }
+  .hero { padding-bottom: 2rem; }
   .dream { padding: 4rem 1.5rem; position: relative; }
   .dream-inner { max-width: 100%; }
   .guide-inner { flex-direction: column-reverse; }
@@ -477,8 +478,8 @@ footer a:hover { color: #a8c0d8; }
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">The Work</a></li>
-    <li><a href="inner-authority.html">Programs</a></li>
-    <li class="nav-work-with-me"><a href="contact.html" style="white-space:nowrap;">Work With Me</a></li>
+    <li class="nav-mobile-visible"><a href="inner-authority.html">Programs</a></li>
+    <li><a href="contact.html" style="white-space:nowrap;">Work With Me</a></li>
   </ul>
 </nav>
 
@@ -778,6 +779,21 @@ footer a:hover { color: #a8c0d8; }
     <p class="work-card-label" style="margin-bottom:0.6rem">Training Programs</p>
     <p style="font-size:0.93rem;line-height:1.9;color:rgba(240,236,224,0.55);">After years working with leaders and founders, I kept seeing the same foundational skills missing. I built a curriculum around it.</p>
   </div>
+
+  <div class="work-card-full" style="border:1px solid rgba(168,192,216,0.35);background:rgba(168,192,216,0.06);border-radius:8px;padding:2rem;margin-bottom:1rem;">
+    <p class="work-card-label" style="color:#a8c0d8;letter-spacing:0.12em;">Now Enrolling</p>
+    <h3 style="margin-bottom:0.4rem;">Inner Authority</h3>
+    <span class="work-card-opening">October Cohort &middot; Oct 18&ndash;Nov 22, 2026</span>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#a8c0d8;line-height:1.6;margin-top:0.9rem;">Return to your inner alignment.</p>
+    <p style="font-size:0.93rem;line-height:1.8;color:rgba(240,236,224,0.5);">6-week online live program for high performers tired of performing, ready to build from clarity again.</p>
+    <a href="apply-inner-authority.html" class="btn-dark" style="margin-top:1rem;display:inline-flex;align-self:flex-start">Apply for the October Cohort &#8594;</a>
+  </div>
+
+  <div class="work-card-full" style="border-color:transparent;padding-top:1.5rem;padding-bottom:0.5rem;">
+    <p class="work-card-label" style="margin-bottom:0.4rem;">Other Trainings</p>
+    <p style="font-size:0.88rem;line-height:1.8;color:rgba(240,236,224,0.5);">Delivered for corporate teams, cohorts, and groups. Inquire to bring one to yours.</p>
+  </div>
+
   <div class="work-cards">
     <div class="work-card">
       <svg class="work-card-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 4 Q22 4 23 12 Q24 20 14 24 Q4 20 5 12 Q6 4 14 4Z" stroke="#a8c0d8" stroke-width="0.7" fill="none"/><path d="M14 9 Q17 9 18 12 Q19 16 14 18 Q9 16 10 12 Q11 9 14 9Z" stroke="#a8c0d8" stroke-width="0.6" fill="none"/><circle cx="14" cy="14" r="1.8" fill="#a8c0d8" opacity="0.5"/></svg>
@@ -785,7 +801,7 @@ footer a:hover { color: #a8c0d8; }
       <h3>Center in Chaos</h3>
       <span class="work-card-opening">Under pressure, you lose access to your best thinking. Not metaphorically - physiologically.</span>
       <p>Five practices to return to center when everything around you is in motion. Learn to lead from groundedness and clarity - even in the midst of uncertainty and high-stakes decisions.</p>
-      <a href="contact.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Inquire about the next cohort &#8594;</a>
+      <a href="future-cohorts.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Register your interest &#8594;</a>
     </div>
     <div class="work-card">
       <svg class="work-card-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20 C7 20 8 8 12 10 C16 12 14 20 18 18 C22 16 22 8 24 8" stroke="#a8c0d8" stroke-width="0.7" fill="none" stroke-linecap="round"/><circle cx="18" cy="18" r="2.2" stroke="#a8c0d8" stroke-width="0.7" fill="none"/><path d="M18 20 L18 25" stroke="#a8c0d8" stroke-width="0.6" stroke-linecap="round" opacity="0.5" stroke-dasharray="1.5 2"/></svg>
@@ -793,7 +809,7 @@ footer a:hover { color: #a8c0d8; }
       <h3>Transcend Your Pattern</h3>
       <span class="work-card-opening">You&#39;ve felt it - the moment you stop leading and start reacting. The decision that came from somewhere old.</span>
       <p>Gain awareness of where your automatic attention goes when you&#39;re overwhelmed - and begin the deeper work of living, leading and creating from the core of who you are, outside your pattern.</p>
-      <a href="contact.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Inquire about the next cohort &#8594;</a>
+      <a href="future-cohorts.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Register your interest &#8594;</a>
     </div>
     <div class="work-card">
       <svg class="work-card-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 24 L14 8" stroke="#a8c0d8" stroke-width="0.7" stroke-linecap="round"/><path d="M14 8 C14 8 20 9 21 14 C22 19 14 20 14 20" stroke="#a8c0d8" stroke-width="0.7" fill="none" stroke-linecap="round"/><path d="M14 13 C14 13 9 14 10 18 C11 22 14 20 14 20" stroke="#a8c0d8" stroke-width="0.6" fill="none" stroke-linecap="round" opacity="0.6"/></svg>
@@ -801,7 +817,7 @@ footer a:hover { color: #a8c0d8; }
       <h3>Build Without Breaking</h3>
       <span class="work-card-opening">The most extraordinary things are built in sustained intensity. And intensity, over time, asks something of you.</span>
       <p>Practices for holding yourself through intense creation cycles - that make resilience the foundation, not the retreat. So both you and the thing you&#39;re building can fully thrive.</p>
-      <a href="contact.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Inquire about the next cohort &#8594;</a>
+      <a href="future-cohorts.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Register your interest &#8594;</a>
     </div>
     <div class="work-card">
       <svg class="work-card-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="7" stroke="#a8c0d8" stroke-width="0.7" fill="none"/><path d="M14 7 L14 4" stroke="#a8c0d8" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/><path d="M14 24 L14 21" stroke="#a8c0d8" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/><path d="M7 14 L4 14" stroke="#a8c0d8" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/><path d="M24 14 L21 14" stroke="#a8c0d8" stroke-width="0.6" stroke-linecap="round" opacity="0.5"/><circle cx="14" cy="14" r="2.5" stroke="#a8c0d8" stroke-width="0.7" fill="none"/></svg>
@@ -810,13 +826,13 @@ footer a:hover { color: #a8c0d8; }
       <span class="work-card-opening">The answers are already inside you. Let&#39;s find them.</span>
       <p>Playful, deep, and surprisingly revelatory. Stanford d.school life design meets lean startup - to explore, prototype and discover your next chapter. Grounded in yourself, tested in real life. Group coaching.</p>
       <p><em>Warning: People have changed their lives after this one.</em></p>
-      <a href="contact.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Inquire about the next cohort &#8594;</a>
+      <a href="future-cohorts.html" class="btn-dark" style="margin-top:auto;display:inline-flex;align-self:flex-start">Register your interest &#8594;</a>
     </div>
   </div>
   <div class="retreat-block">
     <p class="big">Occasionally I bring a small, highly selective group to Bali for an immersive retreat - we find inner power, surrounded by a lush paradise. Ayurvedic treatments, jungle spas, and water temples.</p>
     <p class="small">These are rare. If you feel called - inquire.</p>
-    <a href="contact.html" class="btn-dark">Inquire about the next cohort &#8594;</a>
+    <a href="future-cohorts.html" class="btn-dark">Register your interest &#8594;</a>
   </div>
 </section>
 
