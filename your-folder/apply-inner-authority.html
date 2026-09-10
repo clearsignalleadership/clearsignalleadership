@@ -360,7 +360,7 @@ footer a:hover { color: #a8c0d8; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Oct 3 &ndash; Nov 8, 2026 Cohort</span>
+    <span class="eyebrow">Oct 17 &ndash; Nov 22, 2026 Cohort</span>
     <h1>Inner Authority</h1>
     <p class="hero-sub">Return to your inner alignment. <br><span class="hero-sub-line">For high performers tired of performing, ready to build from clarity again.</span></p>
     <span class="application-label">Application</span>
@@ -377,7 +377,7 @@ footer a:hover { color: #a8c0d8; }
 
   <form id="apply-form" action="https://formspree.io/f/mgorpjoq" method="POST" novalidate>
     <input type="hidden" name="_subject" value="Inner Authority — October Cohort Application">
-    <input type="hidden" name="program" value="Inner Authority — October Cohort (Oct 4–Nov 8, 2026)">
+    <input type="hidden" name="program" value="Inner Authority — October Cohort (Oct 18–Nov 22, 2026)">
 
     <div class="field-row">
       <div class="field-group">
@@ -437,6 +437,14 @@ footer a:hover { color: #a8c0d8; }
     <hr class="form-divider">
 
     <label class="expansion-opt">
+      <input type="checkbox" id="schedule-ack" name="schedule_ack" value="Yes" required>
+      <span>I know Week 6 (Nov 22) starts 1 hr earlier: 8:00am PT &middot; 11:00am ET &middot; 5:00pm CET</span>
+    </label>
+    <span class="field-error" id="schedule-ack-error">Please confirm you've seen the Week 6 time change</span>
+
+    <hr class="form-divider">
+
+    <label class="expansion-opt">
       <input type="checkbox" id="expansion" name="expansion_track" value="Yes">
       <span>Add the Expansion Track (3 coaching sessions) to my application</span>
     </label>
@@ -480,7 +488,7 @@ footer a:hover { color: #a8c0d8; }
 
   <div class="form-success" id="form-success">
     <h2>Thank you.<br><em>I'll be in touch.</em></h2>
-    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">I read every application personally, and will follow up before the cohort starts on October 4.</p>
+    <p style="margin-top:1.5rem;font-size:0.88rem;color:rgba(28,43,58,0.5);letter-spacing:0.03em;">I read every application personally, and will follow up before the cohort starts on October 18.</p>
   </div>
 
 </div>
@@ -535,6 +543,15 @@ document.getElementById('apply-form').addEventListener('submit', async function(
     valid = false;
   } else {
     sourceError.classList.remove('visible');
+  }
+
+  const scheduleAck = document.getElementById('schedule-ack');
+  const scheduleAckError = document.getElementById('schedule-ack-error');
+  if (!scheduleAck.checked) {
+    scheduleAckError.classList.add('visible');
+    valid = false;
+  } else {
+    scheduleAckError.classList.remove('visible');
   }
 
   if (!valid) return;
